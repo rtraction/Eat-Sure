@@ -1,0 +1,21 @@
+<?php
+function queryResult($query)
+{
+	$db = '';
+	$username = '';
+	$password = '';
+	$server = '';
+	
+	$connect = mysql_connect($server, $username, $password);
+	if (!$connect)
+	{
+		echo 'Can not connect to database';
+	}
+	$db_selected = mysql_select_db($db,$connect);
+		
+	$result = mysql_query($query, $connect);	
+	
+	return $result;
+}
+	
+?>

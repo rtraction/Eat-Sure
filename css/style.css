@@ -1,0 +1,121 @@
+body { background-color: #fff; font-family: Arial, Helvetica, sans-serif; margin: 0; overflow: hidden; }
+a { text-decoration: none; color: #222; }
+
+#wrapper { width: 100%; margin: 0 auto; }
+
+#header { width: 100%; height: 113px; background: url(../images/header_bg.gif) repeat-x #313131; color: #fff; }
+#header #logo a { background: url(../images/logo.gif) no-repeat; width: 256px; height: 67px; display: block; }
+#header #logo a span { display: none; }
+
+#header h1, #header h2 { margin: 0; }
+#header h1 { font-size: 18px; font-weight: bold; }
+#header h2 { font-size: 14px; font-weight: bold; }
+#header #header_left { width: 300px; height: 75px; float: left; padding: 5px 0 0 15px; }
+#header #results { width: 465px; height: 80px; float: right; }
+#header #results ul { list-style: none; margin: 0; }
+#header #results ul li { float: left; width: 80px; text-align: center; font-size: 12px; }
+#header #results ul li a { color: #fff; font-size: 24px; font-weight: bold; width: 60px; height: 60px; display: block; margin: 7px 10px 0 10px; padding: 5px; background: no-repeat; }
+#header #results ul li.allinspected { background: url(../images/button_divider.gif) no-repeat 0px 24px; margin-left: 5px; }
+/* Jul.20, 2010 - Greg Smith: use CSS sprites to reduce HTTP requests */
+#header #results ul li.passed a { background:url(../images/but_toggles.jpg) no-repeat 0px -70px }
+#header #results ul li.infraction a { background: url(../images/but_toggles.jpg) no-repeat -70px -70px }
+#header #results ul li.closed a { background: url(../images/but_toggles.jpg) no-repeat -140px -70px }
+#header #results ul li.allinspected a { background: url(../images/but_toggles.jpg) no-repeat -210px -70px }
+#header #results ul li.notinspected a { background: url(../images/but_toggles.jpg) no-repeat -280px -70px }
+#header #results ul li.passed a:hover,
+#header #results ul li.passed a.active { background:url(../images/but_toggles.jpg) no-repeat 0px 0px }
+#header #results ul li.infraction a:hover,
+#header #results ul li.infraction a.active { background:url(../images/but_toggles.jpg) no-repeat -70px 0px }
+#header #results ul li.closed a:hover,
+#header #results ul li.closed a.active { background:url(../images/but_toggles.jpg) no-repeat -140px 0px }
+#header #results ul li.allinspected a:hover,
+#header #results ul li.allinspected a.active { background:url(../images/but_toggles.jpg) no-repeat -210px 0px }
+#header #results ul li.notinspected a:hover,
+#header #results ul li.notinspected a.active { background:url(../images/but_toggles.jpg) no-repeat -280px 0px }
+#header #results ul li .total { padding-top: 3px; font-weight: bold; } 
+
+#header #subheader { clear: both; margin: 0 auto; height: 30px; text-align: center; padding: 4px 20px 0 15px; }
+#header #subheader .source { background: url(../images/subhead.gif) no-repeat; width: 331px; height: 14px; display: block; float: left; text-indent: -9999px; }
+#header #subheader .disclaimer { background: url(../images/disclaimer.gif) no-repeat; width: 61px; height: 11px; display: block; float: left; text-indent: -9999px; }
+#header #subheader .source:hover { background: url(../images/subhead_over.gif); }
+#header #subheader .disclaimer:hover { background: url(../images/disclaimer_over.gif); }
+#header #subheader img { float: left; display: block; padding: 5px 10px 0 10px; }
+#header #subheader .lastupdated { padding: 0; }
+#header #subheader div { float: left; display: block; font-size: 11px; margin-left: 5px; color: #8d8c8c; }
+#header #subheader #subtext { margin-top: 5px; }
+#header #subheader #subsearch { float: right; }
+#header #subheader #subsearch input { cursor: pointer; font-weight: bold; margin-top: 2px; }
+
+#content { width: 100%; height: 100%; }
+#map { width: 100%; height: 100%; }
+
+#updated { background: url(../images/updated_bg.png) no-repeat; color: #eee; position: fixed; bottom: 0; right: 20px; width: 210px; height: 30px; z-index: 100; font-size: 12px; text-align: center; padding-top: 5px; }
+#updated a { color: #fff; font-weight: bold; }
+
+/* info window */
+.info_rating { padding-top: 10px; }
+.info_rating a { color: #a00; text-decoration: underline; }
+.info_rating a:hover { text-decoration: none; }
+
+/* inspection details */
+.inspection_details,
+.closed_details .location { font-size: 14px; }
+.inspection_details,
+.closed_details .location .title { font-size: 22px; }
+.inspection_details .desc { font-size: 16px; margin: 20px 0 0; clear: left; }
+.inspection_details .category { font-size: 12px; color: #757575; margin: 5px 0 0; }
+.inspection_details .severity { font-size: 12px; margin: 5px 0 0; }
+.inspection_details .cdi { color: #0c0; font-weight: bold; }
+.inspection_details .passed { text-align: right; width: 290px; float: right; padding-top: 6px; }
+.inspection_details .share { padding: 20px 5px 0 0; float: left; }
+
+hr.closed { clear:both; }
+.closed_details { width:300px; float:left; }
+.closed_more { width:350px; float:right; margin-top:45px; }
+
+body a#uservoice-feedback-tab { opacity: 0.8; filter:alpha(opacity=80); border-left: solid 1px #fff; border-top: solid 1px #fff; border-bottom: solid 1px #fff; }
+
+#disclaimer { font-size: 12px; line-height: 15px; font-weight: normal; }
+#disclaimer h2 { font-size: 18px; }
+
+#searchouter { font-size: 12px; line-height: 15px; font-weight: normal; display: none; }
+#searchtable { width: 100%; }
+#searchtable th { cursor: pointer; }
+#searchouter #searchtable_filter { margin: 5px; }
+#searchouter .ui-widget-header { border: none; }
+#searchouter .fg-toolbar { margin: 5px 0; position: absolute; top: 7px; left: 93px; }
+#searchouter #searchtable_wrapper .ui-widget-header { background: transparent; } 
+#searchouter .fg-toolbar.ui-corner-tl { width: 400px; height: 20px; }
+#searchouter .fg-toolbar.ui-corner-bl { position: absolute; left: 520px; bottom: 14px; height: 20px; margin-top: 10px; }
+#searchtable .city { width: 50px; }
+#searchtable .closed, #searchtable .infraction, #searchtable .inspected, #searchtable .details, #searchtable .city { text-align: center; }
+#searchtable .location { font-weight: bold; }
+#searchtable img { border: none; }
+#searchtable_filter { text-indent: -52px; overflow: hidden; }
+#legend { font-size: 12px; font-weight: bold; height: 55px; position: absolute; bottom: 10px; padding: 5px; }
+#legend ul { list-style: none; margin: 0; padding: 0; }
+#legend li { padding-left: 14px; margin-bottom: 5px; }
+#legend li.infraction { background: url('../images/legend_infraction.gif') no-repeat 0 3px; }
+#legend li.closed { background: url('../images/legend_closed.gif') no-repeat 0 3px; }
+#searchtable_info { display: none; }
+#searchtable_info, #searchtable_paginate { float: left; }
+#searchtable_paginate { float: right; margin-left: 10px; }
+#searchtable_paginate a { float: left; cursor: pointer; }
+#searchtable_length { float: right; margin-top: 5px; }
+#searchtable_filter, #searchtable_processing { float: left; margin-top: 5px; }
+#searchtable_filter input { width: 220px; }
+.status_label { float:left; width:80px; text-align:right; margin-right:6px; }
+.status_icon { float:left; width: 30px; text-align:left; }
+.status_img { margin-right:4px; }
+
+#loading, #loading_search { font-size: 18px; text-align: center; width: 100%; padding-top: 100px; }
+#loading_search { display: none; z-index: 1005; height: 100%; position: fixed; top: 0; left: 0; background-color: #fff; }
+
+.ui-dialog-titlebar-close { display: none; }
+.ui-dialog .ui-dialog-buttonpane button { margin-left: 10px; }
+.hidden { display: none; }
+
+#sitedown { background: url(images/ui-bg_loop_25_000000_21x21.png); width: 100%; height: 100%; position: absolute; color: #fff; }
+#sitedown a { color: #ddd; text-decoration: underline; }
+#sitedown_inner { width: 520px; margin: 50px auto 0; }
+#sitedown p { line-height: 30px; }
