@@ -1,4 +1,7 @@
 
-1. Create your database, and run the eatsure.sql file.
+1. Create your database, and run the eatsure.sql file
 2. Rename settings.template to settings.php
-3. Add your database connection information to the settings.php file.
+3. Add your database connection information to the settings.php file
+
+
+RELEASED UNDER THE GNU GENERAL PUBLIC LICENSE VERSION 3.0
