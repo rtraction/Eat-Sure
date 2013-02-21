@@ -330,11 +330,11 @@ function getSearch()
  */
 function getInspectionTotals()
 {
-	$query = "SELECT (SELECT COUNT(*) FROM restaurant WHERE closed > 0 AND active = 1) AS closed, 
-		(SELECT COUNT(*) FROM restaurant WHERE critical > 0 OR noncritical > 0 AND active = 1) AS infraction, 
-		(SELECT COUNT(*) FROM restaurant WHERE critical = 0 AND noncritical = 0 AND inspected > 0 AND active = 1) AS passed,
-		(SELECT COUNT(*) FROM restaurant WHERE inspected > 0 AND active = 1) AS total,
-		(SELECT COUNT(*) FROM restaurant WHERE inspected = 0 AND active = 1) AS uninspected";
+	$query = "SELECT (SELECT COUNT(*) FROM restaurant WHERE closed > 0) AS closed, 
+		(SELECT COUNT(*) FROM restaurant WHERE critical > 0 OR noncritical > 0) AS infraction, 
+		(SELECT COUNT(*) FROM restaurant WHERE critical = 0 AND noncritical = 0 AND inspected > 0) AS passed,
+		(SELECT COUNT(*) FROM restaurant WHERE inspected > 0) AS total,
+		(SELECT COUNT(*) FROM restaurant WHERE inspected = 0) AS uninspected";
 	$result = queryResult($query);
 
 	if (mysql_num_rows($result) > 0)
